@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*
+	=== 컨텐츠를 가운데 두는 방법 ====	
+	1) text-align: center; 글자,이미지등이 알아서 어떤 공간의 가로 가운데로 이동
+	2) 사이즈|width를 특정하면,   margin: 0 auto; 공간내에 요소가 가로 가운데로 이동
+	3) 플렉스-컨테이너를 지정하고, justify-content를 center로 두면,   "  (같은결과)
+*/
+.main-logo {
+	display: flex;
+	justify-content: center;
+}
+.main-nav {
+	background-color: black;
+}
+.main-nav ul {/* li들을 가로로 나란히 배치 */
+	display: flex;
+	/* 기본값이라서 따로 적지 않는게 보통, 단 세로배치할때만 column */
+	flex-direction: row; 
+	justify-content: center;
+}
+.main-nav a {
+	color: white;
+	text-decoration: none;
+}
+.extra-nav {
+	background-color: #fafafa;
+}
+.extra-nav ul {
+	display: flex;
+	justify-content: center;
+}
+
+.extra-nav a {
+	color: #666;
+	text-decoration: none;
+}
+
+.sub-logo {
+	text-align: center;
+}
+.site-info p { /* 크기를 몰라도~ p의 공간내에서 글자를 가운데 두는 방법 */
+	text-align: center;
+}
+
+
+
