@@ -5,41 +5,231 @@
 	2) 사이즈|width를 특정하면,   margin: 0 auto; 공간내에 요소가 가로 가운데로 이동
 	3) 플렉스-컨테이너를 지정하고, justify-content를 center로 두면,   "  (같은결과)
 */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+/*============= google font items ==============*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+
+/* ================== hero ===================== */
+.hero-img {
+	height: 335px;
+	position: relative;
+	font-size: 0;
+}
+.model {
+	position: absolute;
+	right: 10%;
+	bottom: 0;
+	z-index: 9;
+}
+.bg {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background: rgb(0,111,255);
+	overflow: hidden;
+}
+
+
 .main-logo {
 	display: flex;
 	justify-content: center;
 }
 .main-nav {
 	background-color: black;
+	padding: 1rem 0;
 }
 .main-nav ul {/* li들을 가로로 나란히 배치 */
 	display: flex;
 	/* 기본값이라서 따로 적지 않는게 보통, 단 세로배치할때만 column */
 	flex-direction: row; 
 	justify-content: center;
+	column-gap: 1rem;
 }
 .main-nav a {
 	color: white;
 	text-decoration: none;
 }
+
+.main-nav a:hover { /* 상태를 만족해야 활성화 됨 */
+	color: #01ccff;
+}
+
+/* ========= 가운데 : 문서의 중앙/본문 (main / content) ======= */
+table {
+	width: 600px;
+	margin: 3rem auto;
+}
+table, tr, th, td {
+	border: 1px solid #333;  /* 테두리: 두께 종류 색상 */
+	border-collapse: collapse; /* 테두리 선을 겹침 ==> 두줄 표시되면 한줄로 표시 */
+}
+caption {
+	margin: 0 0 1rem 0;	
+}
+.bold-text {
+	font-weight: bold;
+}
+th {
+	width: 25%;
+	font-weight: bold;
+	background-color: #fcfcfc;
+}
+th.w75 {
+	width: 75%;
+}
+th, td {
+	padding: 16px 10px;
+	text-align: center;
+}
+td.gap-1 {
+	text-align: left;
+	padding-left: 1rem;
+}
+td.gap-2 {
+	text-align: left;
+	padding-left: 2rem;
+}
+td.gap-3 {
+	text-align: left;
+	padding-left: 3rem;
+}
+.v-center {
+	vertical-align: middle; /* 인라인 요소, 테이블에서 수직 정렬 기준: 중앙 */
+}
+
+.light-red {
+	background-color: #ffeded;
+}
+.warning {
+	color: red;
+}
+
+/* =============== about : 프로그램 소개 페이지 스타일 ==============*/
+.page-map {
+	text-align: right;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: .5rem 0;
+	font-size: .875rem;
+}
+.page-map span {
+	font-size: .825rem;
+	vertical-align: bottom;
+}
+.overview, .mc {
+	max-width: 800px;
+	margin: 0 auto;
+}
+.sec-title {
+	text-align: center;
+	margin: 1.5rem 0;
+	font-weight: bold;
+	font-size: 1.25rem; /* 16px 기준 20px은 약 1.25배 */
+}
+.sec-title::first-letter { /* 의사 요소 (Pseudo Element, 특정 부분/일부분) */
+	background-color: black;
+	font-size: 2rem;
+	color: white;
+	padding: .5rem;
+}
+.cover-story, .profile-story { /* flex 컨테이너 (=부모) */
+	display: flex;
+	column-gap: 1.375rem;
+	justify-content: space-between;
+}
+.cover-story img, .profile-story img {
+	width: 100%;
+	object-fit: cover;
+}
+.story p {
+	margin:0 0 1.5rem 0;
+}
+
+.overview, .mc, .castings, .guests {
+	margin: 100px auto;
+}
+
+
+/* ============ swiper.js custom css =============== */
+.swiper {
+  width: 1000px;
+  height: 380px;
+  margin: 0 auto;
+}
+.swiper-slide ul {
+	display: flex;
+	width: 80%;
+	margin: 0 auto;
+	justify-content: center;
+	column-gap: 1rem;
+}
+.swiper-slide ul li {
+	flex: 1 1 200px;
+	text-align: center;	
+}
+.swiper-slide ul li p:nth-of-type(1) {
+	margin: .5rem 0;
+	font-weight: bold;
+	font-size: 1.125rem;
+}
+.swiper-slide ul li p:nth-of-type(2) {
+	font-size: .875rem;
+	text-align: left;
+	margin: 0 .5rem;
+	line-height: 1.4; /* 행-높이 : 기본 글자크기의 약 1.4배수 만큼 띄어주기 */
+}
+.swiper-slide ul li img {
+	width: 100%;
+	object-fit: cover
+}
+
+
+
+
+/* ============== 아랫쪽 : 문서의 하단 (Footer) ============ */
 .extra-nav {
 	background-color: #fafafa;
+	padding: .875rem 0;
+	border-top: 1px solid #cacaca;
 }
 .extra-nav ul {
 	display: flex;
+	column-gap: .875rem;
 	justify-content: center;
 }
 
 .extra-nav a {
 	color: #666;
+	font-size: .875rem;
 	text-decoration: none;
 }
-
+.extra-nav a:hover { /* hand over : 손이 올라왔다? 포커스가 생성 / 마우스가 닿았다 */
+	text-decoration: underline;
+	font-weight: bold;
+}
+.footer {
+	background-color: black;
+	color: #999;	
+}
 .sub-logo {
 	text-align: center;
 }
 .site-info p { /* 크기를 몰라도~ p의 공간내에서 글자를 가운데 두는 방법 */
 	text-align: center;
+	margin: 1rem 0;
 }
 
 
